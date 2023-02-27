@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+logging:
+  level:
+    ROOT: INFO
+    org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/veganmageiritsa/spring-cloud-config-server-repository
+          default-label: main
+#          username: veganmageiritsa
+#          password: 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
+          clone-on-start: true
+    fail-fast: true
+  security:
+    user:
+      name: spring_cloud_user
+      password: '1234'
+
+log:
+  app-name: config-server
