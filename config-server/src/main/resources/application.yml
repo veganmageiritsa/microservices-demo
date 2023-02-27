@@ -13,16 +13,14 @@ spring:
     config:
       server:
         git:
-          uri: ****
+          uri: https://github.com/veganmageiritsa/spring-cloud-config-server-repository
           default-label: main
-          username: veganmageiritsa
-          password: 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
           clone-on-start: true
     fail-fast: true
-#  security:
-#    user:
-#      name: spring_cloud_user
-#      password: '1234'
+  security:
+    user:
+      name: spring_cloud_user
+      password: '1234'
 
 log:
   app-name: config-server
