@@ -46,7 +46,7 @@ public class TwitterKafkaProducer implements KafkaProducer<Long, TwitterAvroMode
         kafkaResultFuture.addCallback(new ListenableFutureCallback<>() {
             @Override
             public void onFailure(Throwable throwable) {
-                LOG.error("Error while sending message {} to topic {}", message.toString(), topicName, throwable);
+                LOG.error("Error while sending message {} to topic {}", message, topicName, throwable);
             }
 
             @Override
