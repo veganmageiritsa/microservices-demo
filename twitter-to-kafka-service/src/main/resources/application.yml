@@ -9,9 +9,15 @@ spring:
     config:
       name: twitter-to-kafka-service,config-client
       username: spring_cloud_user
-      password: springCloud_Pwd!
+      password: '1234'
 log:
   app-name: twitter-to-kafka-service
 
 twitter-to-kafka-service:
   enable-mock-tweets: true
+
+#encrypt:
+#  key: 'nikolasA'
+#jasypt:
+#  encryptor:
+#    password: nikolas

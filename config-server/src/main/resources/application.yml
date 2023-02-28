@@ -20,7 +20,13 @@ spring:
   security:
     user:
       name: spring_cloud_user
-      password: springCloud_Pwd!
+      password: '1234'
 
 log:
   app-name: config-server
+
+#encrypt:
+#  key: 'nikolasA'
+#jasypt:
+#  encryptor:
+#    password: nikolas

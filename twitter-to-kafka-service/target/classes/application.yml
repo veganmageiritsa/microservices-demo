@@ -15,3 +15,9 @@ log:
 
 twitter-to-kafka-service:
   enable-mock-tweets: true
+
+#encrypt:
+#  key: 'nikolasA'
+#jasypt:
+#  encryptor:
+#    password: nikolas
