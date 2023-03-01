@@ -13,7 +13,8 @@
 		<module>config-server</module>
 		<module>kafka/kafka-consumer</module>
 		<module>kafka-to-elastic-service</module>
-		<!--		<module>jasyptTest</module>-->
+        <module>elastic</module>
+        <!--		<module>jasyptTest</module>-->
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -41,6 +42,7 @@
 		<spring-cloud.version>3.1.4</spring-cloud.version>
 		<spring-cloud-dependencies.version>2021.0.4</spring-cloud-dependencies.version>
 		<jasypt-version>3.0.3</jasypt-version>
+		<elastic-search.version>7.17.4</elastic-search.version>
 	</properties>
 
 	<repositories>
@@ -99,6 +101,12 @@
 				<groupId>com.github.ulisesbocchio</groupId>
 				<artifactId>jasypt-spring-boot-starter</artifactId>
 				<version>${jasypt-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -171,6 +179,16 @@
 				<version>${avro.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch</artifactId>
+				<version>${elastic-search.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-high-level-client</artifactId>
+				<version>${elastic-search.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>io.confluent</groupId>
