@@ -25,7 +25,8 @@ public class KafkaConsumerConfig<K extends Serializable, V extends SpecificRecor
 
     private final KafkaConsumerConfigData kafkaConsumerConfigData;
 
-    public KafkaConsumerConfig(KafkaConfigData configData, KafkaConsumerConfigData consumerConfigData) {
+    public KafkaConsumerConfig(KafkaConfigData configData,
+                               KafkaConsumerConfigData consumerConfigData) {
         this.kafkaConfigData = configData;
         this.kafkaConsumerConfigData = consumerConfigData;
     }
