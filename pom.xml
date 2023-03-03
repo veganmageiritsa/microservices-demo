@@ -14,7 +14,9 @@
 		<module>kafka/kafka-consumer</module>
 		<module>kafka-to-elastic-service</module>
         <module>elastic</module>
-        <!--		<module>jasyptTest</module>-->
+		<module>common-util</module>
+		<module>elastic-query-service</module>
+		<!--		<module>jasyptTest</module>-->
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -98,6 +100,16 @@
 			<dependency>
 				<groupId>com.microservices.demo</groupId>
 				<artifactId>elastic-index-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>common-util</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices.demo</groupId>
+				<artifactId>elastic-query-client</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
