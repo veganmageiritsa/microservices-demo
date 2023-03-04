@@ -8,35 +8,37 @@ import com.microservices.demo.elastic.model.index.impl.TwitterIndexModel;
 import com.microservices.demo.elastic.query.client.service.ElasticQueryClient;
 import com.microservices.demo.elastic.query.service.business.ElasticQueryService;
 import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.microservices.demo.elastic.query.service.model.assembler.ElasticQueryServiceResponseModelAssembler;
 import com.microservices.demo.elastic.query.service.transformer.ElasticToResponseModelTransformer;
 
 @Service
 public class TwitterElasticQueryService implements ElasticQueryService {
     
-    private final ElasticToResponseModelTransformer transformer;
+    private final ElasticQueryServiceResponseModelAssembler assembler;
     
     private final ElasticQueryClient<TwitterIndexModel> elasticQueryClient;
     
-    public TwitterElasticQueryService(final ElasticToResponseModelTransformer transformer,
-                                      final ElasticQueryClient<TwitterIndexModel> elasticQueryClient) {
-        this.transformer = transformer;
+    public TwitterElasticQueryService(
+        final ElasticQueryServiceResponseModelAssembler assembler,
+        final ElasticQueryClient<TwitterIndexModel> elasticQueryClient) {
+        this.assembler = assembler;
         this.elasticQueryClient = elasticQueryClient;
     }
     
     @Override
     public ElasticQueryServiceResponseModel getDocumentById(final String id) {
-        return transformer.getResponseModel(elasticQueryClient.getIndexModelById(id));
+        return assembler.toModel(elasticQueryClient.getIndexModelById(id));
         
     }
     
     @Override
     public List<ElasticQueryServiceResponseModel> getDocumentByText(final String text) {
-        return transformer.getResponseModels(elasticQueryClient.getIndexModelByText(text));
+        return assembler.toModels(elasticQueryClient.getIndexModelByText(text));
     }
     
     @Override
     public List<ElasticQueryServiceResponseModel> getAllDocuments() {
-        return transformer.getResponseModels(elasticQueryClient.getAllIndexModels());
+        return assembler.toModels(elasticQueryClient.getAllIndexModels());
     
     }
     
