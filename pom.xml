@@ -45,6 +45,7 @@
 		<spring-cloud-dependencies.version>2021.0.4</spring-cloud-dependencies.version>
 		<jasypt-version>3.0.3</jasypt-version>
 		<elastic-search.version>7.17.4</elastic-search.version>
+		<springdoc-openapi-ui.version>1.6.4</springdoc-openapi-ui.version>
 	</properties>
 
 	<repositories>
@@ -129,6 +130,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
 				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc-openapi-ui.version}</version>
 			</dependency>
 
 			<dependency>
