@@ -1,7 +1,6 @@
 package com.microservices.demo.elastic.query.client.repository;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
