@@ -17,7 +17,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class ElasticQueryServiceResponseModelAssembler
     extends RepresentationModelAssemblerSupport<TwitterIndexModel, ElasticQueryServiceResponseModel> {
     
-    private ElasticToResponseModelTransformer transformer;
+    private final ElasticToResponseModelTransformer transformer;
     
     public ElasticQueryServiceResponseModelAssembler(final ElasticToResponseModelTransformer transformer) {
         super(ElasticDocumentController.class, ElasticQueryServiceResponseModel.class);
