@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.microservices.demo.elastic.query.web.client.model.ElasticQueryWebClientRequestModel;
-import com.microservices.demo.elastic.query.web.client.model.ElasticQueryWebClientResponseModel;
+import com.microservices.demo.elastic.query.web.client.common.model.ElasticQueryWebClientRequestModel;
+import com.microservices.demo.elastic.query.web.client.common.model.ElasticQueryWebClientResponseModel;
 import com.microservices.demo.elastic.query.web.client.service.ElasticQueryWebClient;
 
 @Controller
@@ -39,7 +39,7 @@ public class QueryController {
     @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("elasticQueryWebClientRequestModel",
-                ElasticQueryWebClientRequestModel.builder().build());
+                           ElasticQueryWebClientRequestModel.builder().build());
         return "home";
     }
 

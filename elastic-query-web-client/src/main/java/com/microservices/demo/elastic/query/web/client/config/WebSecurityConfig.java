@@ -47,23 +47,14 @@ public class WebSecurityConfig {
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-            .antMatchers("/**")
-            .permitAll()
-            .anyRequest()
-            .authenticated()
-            .and()
-            .httpBasic()
-            .and()
-            .csrf().disable();
-//                http
-//                        .httpBasic()
-//                        .and()
-//                        .authorizeRequests()
-//                        .antMatchers("/**").permitAll()
-//                        .antMatchers("/**").hasRole("USER")
-//                                                       .anyRequest()
-//                        .fullyAuthenticated()
+                http
+                        .httpBasic()
+                        .and()
+                        .authorizeRequests()
+                        .antMatchers("/").permitAll()
+                        .antMatchers("/**").hasRole("USER")
+                                                       .anyRequest()
+                        .fullyAuthenticated()
                 ;
         
         return http.build();

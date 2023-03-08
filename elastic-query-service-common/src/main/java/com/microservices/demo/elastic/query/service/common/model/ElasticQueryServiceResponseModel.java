@@ -1,8 +1,6 @@
-package com.microservices.demo.elastic.query.service.model;
+package com.microservices.demo.elastic.query.service.common.model;
 
-import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.List;
 
 import org.springframework.hateoas.RepresentationModel;
 

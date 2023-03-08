@@ -1,4 +1,4 @@
-package com.microservices.demo.elastic.query.web.client.model;
+package com.microservices.demo.elastic.query.web.client.common.model;
 
 import javax.validation.constraints.NotEmpty;
 

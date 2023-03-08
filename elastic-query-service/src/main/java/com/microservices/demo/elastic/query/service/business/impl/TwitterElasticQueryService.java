@@ -7,9 +7,8 @@ import org.springframework.stereotype.Service;
 import com.microservices.demo.elastic.model.index.impl.TwitterIndexModel;
 import com.microservices.demo.elastic.query.client.service.ElasticQueryClient;
 import com.microservices.demo.elastic.query.service.business.ElasticQueryService;
-import com.microservices.demo.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.microservices.demo.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import com.microservices.demo.elastic.query.service.model.assembler.ElasticQueryServiceResponseModelAssembler;
-import com.microservices.demo.elastic.query.service.transformer.ElasticToResponseModelTransformer;
 
 @Service
 public class TwitterElasticQueryService implements ElasticQueryService {
